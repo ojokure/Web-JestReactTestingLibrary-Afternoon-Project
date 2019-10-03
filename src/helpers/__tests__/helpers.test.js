@@ -57,7 +57,7 @@ describe('personMaker', () => {
 
   // write more tests! <===========================================
 
-  it('object contianing unmatching pairs', () => {
+  it('objects contianing unmatching pairs', () => {
     const expected = {name: 'peter'};
     expect({name: 'baz'}).toEqual(expect.not.objectContaining(expected));
   })
