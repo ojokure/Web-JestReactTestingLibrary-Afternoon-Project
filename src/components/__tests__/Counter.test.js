@@ -7,7 +7,7 @@ let tools;
 
 beforeEach(() => {
   rtl.cleanup();
-  tools = rtl.render(<Counter user='Peter' />);
+  tools = rtl.render(<Counter user='Peter' countLimit='5'/>);
 });
 
 describe('Counter component', () => {
@@ -50,9 +50,17 @@ describe('Counter component', () => {
   });
 
   it('prevents the count from going over an upper limit', () => {
-    // implement
-    const incButton = tools.queryByTestId('incButton')
-    expect
+      // implement
+      const incButton = tools.queryByTestId('incButton');
+  
+      rtl.fireEvent.click(incButton);
+      rtl.fireEvent.click(incButton);
+      rtl.fireEvent.click(incButton);
+      rtl.fireEvent.click(incButton);
+      rtl.fireEvent.click(incButton);
+      rtl.fireEvent.click(incButton);
+    const counterUpperLimit = tools.queryByText(/5/i);
+    expect(counterUpperLimit).toBeInTheDocument()
   });
 
   it('prevents the count from going under a lower limit', () => {
