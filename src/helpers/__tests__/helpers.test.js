@@ -28,9 +28,10 @@ describe('sum', () => {
 
 describe('multiply', () => {
   // write tests! <================================================
-  it('returns null if parsed no argument', () => {
-    expect(helpers.multiply(2,2)).toBe(4);
+  it('can add two positive numbers', () => {
+    expect(helpers.multiply(2,3)).toBe(6);
   })
+ 
 });
 
 describe('personMaker', () => {
