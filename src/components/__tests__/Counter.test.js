@@ -38,22 +38,18 @@ describe('Counter component', () => {
   });
 
   it('can decrement the count by one by clicking decrement', () => {
-    // implement
     const counterDecrease = tools.queryByTestId('decButton');
     expect(counterDecrease).toBeInTheDocument();
   });
 
   it('can reset the count clicking rest', () => {
-    // implement
     const counterReset = tools.queryByTestId('resetButton');
     expect(counterReset).toBeInTheDocument()
   });
 
   it('prevents the count from going over an upper limit', () => {
-      // implement
       const incButton = tools.queryByTestId('incButton');
   
-      rtl.fireEvent.click(incButton);
       rtl.fireEvent.click(incButton);
       rtl.fireEvent.click(incButton);
       rtl.fireEvent.click(incButton);
@@ -64,14 +60,11 @@ describe('Counter component', () => {
   });
 
   it('prevents the count from going under a lower limit', () => {
-    // implement
   });
 
   it('shows a warning once we hit the upper limit of the counter', () => {
-    // implement
   });
 
   it('shows a warning once we hit the lower limit of the counter', () => {
-    // implement
   });
 });
