@@ -28,7 +28,7 @@ describe('sum', () => {
 
 describe('multiply', () => {
   // write tests! <================================================
-  it('returns undefined if parsed no argument', () => {
+  it('returns null if parsed no argument', () => {
     expect(helpers.multiply(2,2)).toBe(4);
   })
 });
