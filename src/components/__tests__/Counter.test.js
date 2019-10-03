@@ -7,7 +7,7 @@ let tools;
 
 beforeEach(() => {
   rtl.cleanup();
-  tools = rtl.render(<Counter user="Peter" countLimit="5" />);
+  tools = rtl.render(<Counter user="Peter" countLimit={5} />);
 });
 
 describe("Counter component", () => {
@@ -70,7 +70,17 @@ describe("Counter component", () => {
     expect(counterLowestLimit).toBeInTheDocument();
   });
 
-  it("shows a warning once we hit the upper limit of the counter", () => {});
+  it("shows a warning once we hit the upper limit of the counter", () => {
+    const incButton = tools.queryByTestId("incButton");
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    rtl.fireEvent.click(incButton);
+    const warning = tools.queryByTestId("upperWarning");
+    expect(warning).toBeInTheDocument();
+  });
 
   it("shows a warning once we hit the lower limit of the counter", () => {});
 });
