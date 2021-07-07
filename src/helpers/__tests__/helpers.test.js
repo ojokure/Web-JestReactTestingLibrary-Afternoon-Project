@@ -28,6 +28,21 @@ describe('sum', () => {
 
 describe('multiply', () => {
   // write tests! <================================================
+  it('can multiply two positive numbers', () => {
+    expect(helpers.multiply(2,3)).toBe(6);
+  })
+
+  it('can multiply two negative numbers', () => {
+    expect(helpers.multiply(-3,-3)).toBe(9);
+  })
+
+  it('can multiply two negative numbers', () => {
+    expect(helpers.multiply(-3,-3)).toBe(9);
+  })
+  it('throws if parsed strings', () => {
+    expect(() => helpers.sum('1', '2')).toThrow();
+  });
+ 
 });
 
 describe('personMaker', () => {
@@ -41,4 +56,9 @@ describe('personMaker', () => {
   });
 
   // write more tests! <===========================================
+
+  it('objects contianing unmatching pairs', () => {
+    const expected = {name: 'peter'};
+    expect({name: 'baz'}).toEqual(expect.not.objectContaining(expected));
+  })
 });
